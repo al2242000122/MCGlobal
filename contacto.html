@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — MC Global México</title>
+  <meta name="description" content="Comunicate con MC Global Mexico. Escribenos para recibir tu consultoria fiscal y empresarial personalizada.">
+  <meta name="theme-color" content="#5FB1FF">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo"><img src="MCglobalLogo.jpg" alt="MC Global México"></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <span class="section-label">Hablemos</span>
+      <h1>Comunicate con nosotros</h1>
+      <p>¿En que te podemos ayudar? ¡Escribenos para recibir tu consultoria personalizada!</p>
+      <div class="breadcrumb"><a href="index.html">Inicio</a> / Contacto</div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- INFO -->
+        <div class="contact-info-card reveal">
+          <h3>Informacion de Contacto</h3>
+
+          <div class="contact-detail">
+            <div class="icon">📞</div>
+            <div>
+              <h4>Telefono</h4>
+              <p><a href="tel:5561554655" style="color:inherit;">55 6155 4655</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="icon">✉️</div>
+            <div>
+              <h4>Correo electronico</h4>
+              <p><a href="mailto:contacto@mcglobalmexico.mx" style="color:inherit;">contacto@mcglobalmexico.mx</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h4>Horario</h4>
+              <p>Lunes a Viernes: 09:00 – 17:00</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="icon">🌐</div>
+            <div>
+              <h4>Sitio web</h4>
+              <p>www.mcglobalmexico.mx</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FORM -->
+        <div class="contact-form reveal reveal-delay-1">
+          <h3>Solicita tu consultoria</h3>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" placeholder="Tu nombre completo" required>
+              </div>
+              <div class="form-group">
+                <label for="empresa">Empresa</label>
+                <input type="text" id="empresa" placeholder="Nombre de tu empresa">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefono">Telefono</label>
+                <input type="tel" id="telefono" placeholder="+52 55 1234 5678">
+              </div>
+              <div class="form-group">
+                <label for="email">Correo electronico</label>
+                <input type="email" id="email" placeholder="tu@correo.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="servicio">Servicio de interes</label>
+              <select id="servicio">
+                <option value="">Selecciona un servicio</option>
+                <option value="Incubacion de Negocios">Incubacion de Negocios</option>
+                <option value="Ingenieria Fiscal">Ingenieria Fiscal</option>
+                <option value="Optimizacion Tributaria">Optimizacion Tributaria</option>
+                <option value="Recapitalizacion">Recapitalizacion</option>
+                <option value="Blindaje Financiero">Blindaje Financiero</option>
+                <option value="Estructura Legal Corporativa">Estructura Legal Corporativa</option>
+                <option value="Consultoria Financiera">Consultoria Financiera</option>
+                <option value="Desarrollo Empresarial">Desarrollo Empresarial</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" placeholder="Describe la situacion de tu empresa, el sector en que operas y que objetivos fiscales o de crecimiento tienes..." rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+              Enviar Solicitud
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container reveal">
+      <span class="section-label" style="color:rgba(95,177,255,.8)">Respuesta rapida</span>
+      <h2>Respondemos en menos de 2 horas en horario laboral</h2>
+      <p>Tu rentabilidad no puede esperar. Nosotros tampoco.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="MCglobalLogo.jpg" alt="MC Global México">
+          <p>Incubadora de negocios y arquitectos de la rentabilidad. Blindamos tu empresa financieramente.</p>
+        </div>
+        <div>
+          <h4>Navegacion</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="servicios.html">Incubacion de Negocios</a></li>
+            <li><a href="servicios.html">Ingenieria Fiscal</a></li>
+            <li><a href="servicios.html">Optimizacion Tributaria</a></li>
+            <li><a href="servicios.html">Blindaje Financiero</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="tel:5561554655">55 6155 4655</a></li>
+            <li><a href="mailto:contacto@mcglobalmexico.mx">contacto@mcglobalmexico.mx</a></li>
+            <li><a href="contacto.html">Formulario</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 MC Global Mexico. Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', true); });
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+    }, { threshold: 0.15 });
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Form submit
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('¡Gracias por tu solicitud! Nos pondremos en contacto contigo pronto.');
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
