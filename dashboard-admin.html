@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Administrador — MC Global México</title>
+  <meta name="description" content="Panel de administracion de MC Global México.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="MCglobalLogo.jpg" alt="MC Global México">
+        <span>Panel Admin</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-nav-group">
+          <div class="sidebar-nav-group-title">Principal</div>
+          <a class="sidebar-link active" href="#" data-section="inicio">
+            <span class="link-icon">&#x1F3E0;</span> Inicio
+          </a>
+        </div>
+
+        <div class="sidebar-nav-group">
+          <div class="sidebar-nav-group-title">Gestion</div>
+
+          <div class="sidebar-dropdown">
+            <button class="sidebar-link sidebar-dropdown-toggle" data-dropdown>
+              <span style="display:flex;align-items:center;gap:0.75rem"><span class="link-icon">&#x1F465;</span> Clientes</span>
+              <span class="chevron">&#x25BC;</span>
+            </button>
+            <div class="sidebar-submenu">
+              <a class="sidebar-link" href="#" data-section="clientes-lista">Lista de Clientes</a>
+              <a class="sidebar-link" href="#" data-section="clientes-nuevo">Nuevo Cliente</a>
+              <a class="sidebar-link" href="#" data-section="clientes-expedientes">Expedientes</a>
+            </div>
+          </div>
+
+          <div class="sidebar-dropdown">
+            <button class="sidebar-link sidebar-dropdown-toggle" data-dropdown>
+              <span style="display:flex;align-items:center;gap:0.75rem"><span class="link-icon">&#x2699;</span> Servicios Activos</span>
+              <span class="chevron">&#x25BC;</span>
+            </button>
+            <div class="sidebar-submenu">
+              <a class="sidebar-link" href="#" data-section="servicios-incubacion">Incubacion</a>
+              <a class="sidebar-link" href="#" data-section="servicios-fiscal">Ingenieria Fiscal</a>
+              <a class="sidebar-link" href="#" data-section="servicios-blindaje">Blindaje Financiero</a>
+              <a class="sidebar-link" href="#" data-section="servicios-consultoria">Consultoria</a>
+            </div>
+          </div>
+
+          <div class="sidebar-dropdown">
+            <button class="sidebar-link sidebar-dropdown-toggle" data-dropdown>
+              <span style="display:flex;align-items:center;gap:0.75rem"><span class="link-icon">&#x1F4CA;</span> Reportes</span>
+              <span class="chevron">&#x25BC;</span>
+            </button>
+            <div class="sidebar-submenu">
+              <a class="sidebar-link" href="#" data-section="reportes-mensuales">Reportes Mensuales</a>
+              <a class="sidebar-link" href="#" data-section="reportes-anuales">Reportes Anuales</a>
+              <a class="sidebar-link" href="#" data-section="reportes-fiscales">Reportes Fiscales</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-nav-group">
+          <div class="sidebar-nav-group-title">Fiscal</div>
+
+          <div class="sidebar-dropdown">
+            <button class="sidebar-link sidebar-dropdown-toggle" data-dropdown>
+              <span style="display:flex;align-items:center;gap:0.75rem"><span class="link-icon">&#x1F4C5;</span> Obligaciones Fiscales</span>
+              <span class="chevron">&#x25BC;</span>
+            </button>
+            <div class="sidebar-submenu">
+              <a class="sidebar-link" href="#" data-section="fiscal-calendario">Calendario Fiscal</a>
+              <a class="sidebar-link" href="#" data-section="fiscal-declaraciones">Declaraciones</a>
+              <a class="sidebar-link" href="#" data-section="fiscal-impuestos">Impuestos Pendientes</a>
+            </div>
+          </div>
+
+          <div class="sidebar-dropdown">
+            <button class="sidebar-link sidebar-dropdown-toggle" data-dropdown>
+              <span style="display:flex;align-items:center;gap:0.75rem"><span class="link-icon">&#x1F9FE;</span> Facturacion</span>
+              <span class="chevron">&#x25BC;</span>
+            </button>
+            <div class="sidebar-submenu">
+              <a class="sidebar-link" href="#" data-section="fact-emitidas">Facturas Emitidas</a>
+              <a class="sidebar-link" href="#" data-section="fact-recibidas">Facturas Recibidas</a>
+              <a class="sidebar-link" href="#" data-section="fact-nueva">Nueva Factura</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-nav-group">
+          <div class="sidebar-nav-group-title">Sistema</div>
+          <div class="sidebar-dropdown">
+            <button class="sidebar-link sidebar-dropdown-toggle" data-dropdown>
+              <span style="display:flex;align-items:center;gap:0.75rem"><span class="link-icon">&#x2699;&#xFE0F;</span> Configuracion</span>
+              <span class="chevron">&#x25BC;</span>
+            </button>
+            <div class="sidebar-submenu">
+              <a class="sidebar-link" href="#" data-section="config-usuarios">Usuarios</a>
+              <a class="sidebar-link" href="#" data-section="config-empresa">Datos Empresa</a>
+              <a class="sidebar-link" href="#" data-section="config-respaldos">Respaldos</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="sidebar-user-avatar" id="userAvatar">A</div>
+          <div class="sidebar-user-info">
+            <div class="sidebar-user-name" id="userName">Administrador</div>
+            <div class="sidebar-user-role">Administrador</div>
+          </div>
+        </div>
+        <button class="btn-logout" onclick="logout()">&#x274C; Cerrar Sesion</button>
+      </div>
+    </aside>
+
+    <button class="sidebar-toggle" id="sidebarToggle">&#x2630;</button>
+
+    <!-- Main Content -->
+    <main class="dash-main">
+      <div class="dash-topbar">
+        <h1>Panel de Administracion</h1>
+        <span class="dash-date" id="dashDate"></span>
+      </div>
+
+      <div class="dash-stats">
+        <div class="dash-stat-card">
+          <div class="stat-icon">&#x1F465;</div>
+          <div class="stat-value">200+</div>
+          <div class="stat-label">Empresas Incubadas</div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="stat-icon">&#x1F4C4;</div>
+          <div class="stat-value">15</div>
+          <div class="stat-label">Proyectos en Proceso</div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="stat-icon">&#x1F4B0;</div>
+          <div class="stat-value">8</div>
+          <div class="stat-label">Facturas Pendientes</div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="stat-icon">&#x26A0;</div>
+          <div class="stat-value">4</div>
+          <div class="stat-label">Vencimientos Proximos</div>
+        </div>
+      </div>
+
+      <div class="dash-grid">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h3>Clientes Recientes</h3>
+            <span class="badge badge-info">200+ Total</span>
+          </div>
+          <table class="dash-table">
+            <thead><tr><th>Cliente</th><th>RFC</th><th>Servicio</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td>Comercializadora Azteca S.A.</td><td>CAZ120315XX1</td><td>Incubacion</td><td><span class="badge badge-success">Activo</span></td></tr>
+              <tr><td>Roberto Hernandez Lopez</td><td>HELR880512XX2</td><td>Ingenieria Fiscal</td><td><span class="badge badge-success">Activo</span></td></tr>
+              <tr><td>Distribuidora Central S. de R.L.</td><td>DCE090721XX3</td><td>Blindaje Financiero</td><td><span class="badge badge-warning">En revision</span></td></tr>
+              <tr><td>Ana Garcia Morales</td><td>GAMA950310XX4</td><td>Optimizacion Tributaria</td><td><span class="badge badge-success">Activo</span></td></tr>
+              <tr><td>Grupo Industrial Norte S.A.</td><td>GIN170830XX5</td><td>Recapitalizacion</td><td><span class="badge badge-danger">Pendiente</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h3>Vencimientos Proximos</h3>
+            <span class="badge badge-warning">Marzo 2026</span>
+          </div>
+          <div class="dash-card-body">
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-date"><div class="day">25</div><div class="month">Mar</div></div>
+              <div class="dash-timeline-info"><h4>Declaracion Mensual ISR</h4><p>Comercializadora Azteca S.A. — Periodo febrero 2026</p></div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-date"><div class="day">28</div><div class="month">Mar</div></div>
+              <div class="dash-timeline-info"><h4>Declaracion IVA</h4><p>Distribuidora Central S. de R.L. — Periodo febrero 2026</p></div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-date"><div class="day">31</div><div class="month">Mar</div></div>
+              <div class="dash-timeline-info"><h4>Pago IMSS Bimestral</h4><p>Grupo Industrial Norte S.A. — 1er bimestre 2026</p></div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-date"><div class="day">01</div><div class="month">Abr</div></div>
+              <div class="dash-timeline-info"><h4>Declaracion Anual PF</h4><p>Roberto Hernandez Lopez — Ejercicio 2025</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-grid" style="margin-top: 1.5rem;">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h3>Servicios Activos</h3>
+            <span class="badge badge-success">45 servicios</span>
+          </div>
+          <table class="dash-table">
+            <thead><tr><th>Servicio</th><th>Clientes</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td>Incubacion de Negocios</td><td>25</td><td><span class="badge badge-success">Activo</span></td></tr>
+              <tr><td>Ingenieria Fiscal</td><td>18</td><td><span class="badge badge-success">Activo</span></td></tr>
+              <tr><td>Blindaje Financiero</td><td>12</td><td><span class="badge badge-success">Activo</span></td></tr>
+              <tr><td>Optimizacion Tributaria</td><td>9</td><td><span class="badge badge-info">En proceso</span></td></tr>
+              <tr><td>Recapitalizacion</td><td>6</td><td><span class="badge badge-warning">Pendiente</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card-header"><h3>Actividad Reciente</h3></div>
+          <div class="dash-card-body">
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-date"><div class="day">21</div><div class="month">Mar</div></div>
+              <div class="dash-timeline-info"><h4>Empresa incubada exitosamente</h4><p>Comercializadora Azteca S.A. — Estructura fiscal completa</p></div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-date"><div class="day">20</div><div class="month">Mar</div></div>
+              <div class="dash-timeline-info"><h4>Blindaje financiero completado</h4><p>Ana Garcia Morales — Proteccion patrimonial</p></div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-date"><div class="day">19</div><div class="month">Mar</div></div>
+              <div class="dash-timeline-info"><h4>Nuevo cliente registrado</h4><p>Distribuidora Central S. de R.L.</p></div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-date"><div class="day">18</div><div class="month">Mar</div></div>
+              <div class="dash-timeline-info"><h4>Optimizacion tributaria aprobada</h4><p>Grupo Industrial Norte S.A. — Ahorro fiscal del 35%</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    const session = requireAuth(['admin']);
+    if (session) {
+      document.getElementById('userName').textContent = session.name;
+      document.getElementById('userAvatar').textContent = session.name.charAt(0).toUpperCase();
+    }
+
+    const now = new Date();
+    document.getElementById('dashDate').textContent = now.toLocaleDateString('es-MX', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+    document.querySelectorAll('[data-dropdown]').forEach(btn => {
+      btn.addEventListener('click', function() { this.closest('.sidebar-dropdown').classList.toggle('open'); });
+    });
+
+    document.getElementById('sidebarToggle').addEventListener('click', function() {
+      document.getElementById('sidebar').classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

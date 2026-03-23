@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Cliente — MC Global México</title>
+  <meta name="description" content="Portal de clientes de MC Global México.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="MCglobalLogo.jpg" alt="MC Global México">
+        <span>Portal Cliente</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-nav-group">
+          <div class="sidebar-nav-group-title">Principal</div>
+          <a class="sidebar-link active" href="#" data-section="inicio">
+            <span class="link-icon">&#x1F3E0;</span> Inicio
+          </a>
+        </div>
+
+        <div class="sidebar-nav-group">
+          <div class="sidebar-nav-group-title">Mis Servicios</div>
+
+          <div class="sidebar-dropdown">
+            <button class="sidebar-link sidebar-dropdown-toggle" data-dropdown>
+              <span style="display:flex;align-items:center;gap:0.75rem"><span class="link-icon">&#x1F4C1;</span> Mis Documentos</span>
+              <span class="chevron">&#x25BC;</span>
+            </button>
+            <div class="sidebar-submenu">
+              <a class="sidebar-link" href="#" data-section="docs-compartidos">Documentos Compartidos</a>
+              <a class="sidebar-link" href="#" data-section="docs-subir">Subir Documento</a>
+              <a class="sidebar-link" href="#" data-section="docs-constancias">Constancias Fiscales</a>
+            </div>
+          </div>
+
+          <div class="sidebar-dropdown">
+            <button class="sidebar-link sidebar-dropdown-toggle" data-dropdown>
+              <span style="display:flex;align-items:center;gap:0.75rem"><span class="link-icon">&#x1F4CB;</span> Mis Tramites</span>
+              <span class="chevron">&#x25BC;</span>
+            </button>
+            <div class="sidebar-submenu">
+              <a class="sidebar-link" href="#" data-section="tramites-activos">Tramites Activos</a>
+              <a class="sidebar-link" href="#" data-section="tramites-historial">Historial</a>
+              <a class="sidebar-link" href="#" data-section="tramites-nuevo">Solicitar Tramite</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-nav-group">
+          <div class="sidebar-nav-group-title">Fiscal</div>
+
+          <div class="sidebar-dropdown">
+            <button class="sidebar-link sidebar-dropdown-toggle" data-dropdown>
+              <span style="display:flex;align-items:center;gap:0.75rem"><span class="link-icon">&#x1F4C5;</span> Obligaciones Fiscales</span>
+              <span class="chevron">&#x25BC;</span>
+            </button>
+            <div class="sidebar-submenu">
+              <a class="sidebar-link" href="#" data-section="fiscal-proximas">Proximas Fechas</a>
+              <a class="sidebar-link" href="#" data-section="fiscal-declaraciones">Mis Declaraciones</a>
+              <a class="sidebar-link" href="#" data-section="fiscal-situacion">Situacion Fiscal</a>
+            </div>
+          </div>
+
+          <div class="sidebar-dropdown">
+            <button class="sidebar-link sidebar-dropdown-toggle" data-dropdown>
+              <span style="display:flex;align-items:center;gap:0.75rem"><span class="link-icon">&#x1F9FE;</span> Facturacion</span>
+              <span class="chevron">&#x25BC;</span>
+            </button>
+            <div class="sidebar-submenu">
+              <a class="sidebar-link" href="#" data-section="fact-mis-facturas">Mis Facturas</a>
+              <a class="sidebar-link" href="#" data-section="fact-pagos">Estado de Pagos</a>
+              <a class="sidebar-link" href="#" data-section="fact-recibos">Recibos</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-nav-group">
+          <div class="sidebar-nav-group-title">Cuenta</div>
+          <div class="sidebar-dropdown">
+            <button class="sidebar-link sidebar-dropdown-toggle" data-dropdown>
+              <span style="display:flex;align-items:center;gap:0.75rem"><span class="link-icon">&#x1F464;</span> Mi Perfil</span>
+              <span class="chevron">&#x25BC;</span>
+            </button>
+            <div class="sidebar-submenu">
+              <a class="sidebar-link" href="#" data-section="perfil-datos">Datos Personales</a>
+              <a class="sidebar-link" href="#" data-section="perfil-contrasena">Cambiar Contrasena</a>
+              <a class="sidebar-link" href="#" data-section="perfil-notificaciones">Notificaciones</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="sidebar-user-avatar" id="userAvatar">C</div>
+          <div class="sidebar-user-info">
+            <div class="sidebar-user-name" id="userName">Cliente</div>
+            <div class="sidebar-user-role">Cliente</div>
+          </div>
+        </div>
+        <button class="btn-logout" onclick="logout()">&#x274C; Cerrar Sesion</button>
+      </div>
+    </aside>
+
+    <button class="sidebar-toggle" id="sidebarToggle">&#x2630;</button>
+
+    <!-- Main Content -->
+    <main class="dash-main">
+      <div class="dash-topbar">
+        <h1>Bienvenido, <span id="welcomeName">Cliente</span></h1>
+        <span class="dash-date" id="dashDate"></span>
+      </div>
+
+      <div class="dash-stats">
+        <div class="dash-stat-card">
+          <div class="stat-icon">&#x1F4C4;</div>
+          <div class="stat-value">3</div>
+          <div class="stat-label">Tramites Activos</div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="stat-icon">&#x1F4C1;</div>
+          <div class="stat-value">12</div>
+          <div class="stat-label">Documentos</div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="stat-icon">&#x1F4B0;</div>
+          <div class="stat-value">2</div>
+          <div class="stat-label">Facturas Pendientes</div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="stat-icon">&#x2705;</div>
+          <div class="stat-value">Al dia</div>
+          <div class="stat-label">Situacion Fiscal</div>
+        </div>
+      </div>
+
+      <div class="dash-grid">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h3>Mis Tramites en Proceso</h3>
+            <span class="badge badge-info">3 activos</span>
+          </div>
+          <table class="dash-table">
+            <thead><tr><th>Tramite</th><th>Fecha</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td>Estructura Fiscal 2026</td><td>15/03/2026</td><td><span class="badge badge-warning">En proceso</span></td></tr>
+              <tr><td>Incubacion de Negocio</td><td>10/03/2026</td><td><span class="badge badge-success">Completado</span></td></tr>
+              <tr><td>Blindaje Financiero</td><td>05/03/2026</td><td><span class="badge badge-success">Completado</span></td></tr>
+              <tr><td>Optimizacion Tributaria</td><td>28/02/2026</td><td><span class="badge badge-info">En revision</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h3>Proximos Vencimientos</h3>
+            <span class="badge badge-warning">Atencion</span>
+          </div>
+          <div class="dash-card-body">
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-date"><div class="day">25</div><div class="month">Mar</div></div>
+              <div class="dash-timeline-info"><h4>Declaracion Mensual ISR</h4><p>Periodo febrero 2026 — MC Global se encarga</p></div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-date"><div class="day">31</div><div class="month">Mar</div></div>
+              <div class="dash-timeline-info"><h4>Pago IMSS</h4><p>1er bimestre 2026 — En proceso</p></div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-date"><div class="day">01</div><div class="month">Abr</div></div>
+              <div class="dash-timeline-info"><h4>Declaracion Anual</h4><p>Ejercicio 2025 — Documentacion en revision</p></div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-date"><div class="day">17</div><div class="month">Abr</div></div>
+              <div class="dash-timeline-info"><h4>Pago Provisional ISR</h4><p>Periodo marzo 2026</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-grid" style="margin-top: 1.5rem;">
+        <div class="dash-card">
+          <div class="dash-card-header"><h3>Documentos Recientes</h3></div>
+          <div class="dash-card-body">
+            <div class="doc-item">
+              <div class="doc-icon">&#x1F4C4;</div>
+              <div class="doc-info"><h4>Constancia de Situacion Fiscal 2026</h4><p>PDF — 18 marzo 2026</p></div>
+              <span class="doc-action">Descargar</span>
+            </div>
+            <div class="doc-item">
+              <div class="doc-icon">&#x1F4CA;</div>
+              <div class="doc-info"><h4>Balance General Febrero 2026</h4><p>PDF — 12 marzo 2026</p></div>
+              <span class="doc-action">Descargar</span>
+            </div>
+            <div class="doc-item">
+              <div class="doc-icon">&#x1F9FE;</div>
+              <div class="doc-info"><h4>Factura MCG-2026-0098</h4><p>XML / PDF — 5 marzo 2026</p></div>
+              <span class="doc-action">Descargar</span>
+            </div>
+            <div class="doc-item">
+              <div class="doc-icon">&#x1F4C4;</div>
+              <div class="doc-info"><h4>Acuse Declaracion Enero 2026</h4><p>PDF — 25 febrero 2026</p></div>
+              <span class="doc-action">Descargar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card-header"><h3>Mis Facturas</h3><span class="badge badge-neutral">Ultimos 3 meses</span></div>
+          <table class="dash-table">
+            <thead><tr><th>Folio</th><th>Fecha</th><th>Monto</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td>MCG-2026-0098</td><td>05/03/2026</td><td>$12,500.00</td><td><span class="badge badge-danger">Pendiente</span></td></tr>
+              <tr><td>MCG-2026-0067</td><td>05/02/2026</td><td>$12,500.00</td><td><span class="badge badge-success">Pagada</span></td></tr>
+              <tr><td>MCG-2026-0031</td><td>05/01/2026</td><td>$12,500.00</td><td><span class="badge badge-success">Pagada</span></td></tr>
+              <tr><td>MCG-2025-0412</td><td>05/12/2025</td><td>$12,500.00</td><td><span class="badge badge-success">Pagada</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    const session = requireAuth(['cliente']);
+    if (session) {
+      document.getElementById('userName').textContent = session.name;
+      document.getElementById('welcomeName').textContent = session.name.split(' ')[0];
+      document.getElementById('userAvatar').textContent = session.name.charAt(0).toUpperCase();
+    }
+
+    const now = new Date();
+    document.getElementById('dashDate').textContent = now.toLocaleDateString('es-MX', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+    document.querySelectorAll('[data-dropdown]').forEach(btn => {
+      btn.addEventListener('click', function() { this.closest('.sidebar-dropdown').classList.toggle('open'); });
+    });
+
+    document.getElementById('sidebarToggle').addEventListener('click', function() {
+      document.getElementById('sidebar').classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

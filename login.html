@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesion — MC Global México</title>
+  <meta name="description" content="Acceso al portal de clientes y administracion de MC Global México.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <div class="login-page">
+    <div class="login-card">
+      <img src="MCglobalLogo.jpg" alt="MC Global México" class="login-logo">
+      <h2>Iniciar Sesion</h2>
+      <p class="login-subtitle">Acceda al portal de MC Global México</p>
+
+      <div class="login-error" id="loginError">Usuario o contrasena incorrectos</div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input type="text" id="username" name="username" required placeholder="admin o cliente" autocomplete="username">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contrasena</label>
+          <input type="password" id="password" name="password" required placeholder="Ingrese su contrasena" autocomplete="current-password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+      </form>
+
+      <div class="login-back">
+        <a href="index.html">&larr; Volver al sitio</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    const session = getSession();
+    if (session) {
+      window.location.href = session.role === 'admin' ? 'dashboard-admin.html' : 'dashboard-cliente.html';
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      const errorEl = document.getElementById('loginError');
+
+      const result = login(username, password);
+      if (result) {
+        errorEl.classList.remove('show');
+        window.location.href = result.role === 'admin' ? 'dashboard-admin.html' : 'dashboard-cliente.html';
+      } else {
+        errorEl.classList.add('show');
+        document.getElementById('password').value = '';
+        document.getElementById('password').focus();
+      }
+    });
+  </script>
+
+</body>
+</html>
