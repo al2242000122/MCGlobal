@@ -8,12 +8,17 @@
   <meta name="theme-color" content="#5FB1FF">
   <meta property="og:title" content="Nosotros — MC Global México">
   <meta property="og:description" content="Incubadora de negocios y arquitectos de la rentabilidad.">
+  <meta property="og:image" content="MCglobalFinal.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a1628'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial,sans-serif' font-weight='900' font-size='16' fill='%235FB1FF'%3EMC%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader"><div class="preloader-spinner"></div></div>
 
   <!-- NAVBAR -->
   <nav class="navbar scrolled" id="navbar">
@@ -95,17 +100,17 @@
       </div>
       <div class="about-grid" style="grid-template-columns: repeat(3, 1fr);">
         <div class="about-card reveal" style="text-align:center;">
-          <span class="about-card-icon">&#129309;</span>
+          <span class="about-card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></span>
           <h3>Confianza</h3>
           <p>Operamos con total transparencia. Cada estrategia fiscal esta documentada, justificada y disponible para ti en todo momento.</p>
         </div>
         <div class="about-card reveal reveal-delay-1" style="text-align:center;">
-          <span class="about-card-icon">&#9889;</span>
+          <span class="about-card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
           <h3>Agilidad</h3>
           <p>Entendemos que la carga tributaria mal gestionada es el principal enemigo de la rentabilidad. Actuamos rapido y con precision.</p>
         </div>
         <div class="about-card reveal reveal-delay-2" style="text-align:center;">
-          <span class="about-card-icon">&#127919;</span>
+          <span class="about-card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
           <h3>Estrategia</h3>
           <p>No hay dos negocios iguales. Disenamos estructuras fiscales y corporativas a la medida de las necesidades especificas de cada empresa.</p>
         </div>
@@ -231,10 +236,18 @@
   </footer>
 
   <style>
-    .about-card-icon { font-size: 2rem; display: block; margin-bottom: 1rem; }
+    .about-card-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
   </style>
 
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
   <script>
+    /* Preloader */
+    window.addEventListener('load', () => { document.getElementById('preloader').classList.add('hidden'); });
+
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', true); }, { passive: true });
     const hamburger = document.getElementById('hamburger');
@@ -244,6 +257,40 @@
     const revealEls = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); obs.unobserve(e.target); } }); }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
     revealEls.forEach(el => obs.observe(el));
+
+    /* Back to Top */
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 400); }, { passive: true });
+    backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+    /* Animated Counters */
+    function animateCounter(el) {
+      const text = el.textContent.trim();
+      const match = text.match(/^([\d,]+)(\+|%)?$/);
+      if (!match) return;
+      const target = parseInt(match[1].replace(/,/g, ''), 10);
+      const suffix = match[2] || '';
+      const duration = 2000;
+      const start = performance.now();
+      el.textContent = '0' + suffix;
+      function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(eased * target);
+        el.textContent = current.toLocaleString() + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.stat-item h3').forEach(animateCounter);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.stats-grid').forEach(grid => counterObserver.observe(grid));
   </script>
 
 </body>

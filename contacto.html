@@ -8,12 +8,17 @@
   <meta name="theme-color" content="#5FB1FF">
   <meta property="og:title" content="Contacto — MC Global México">
   <meta property="og:description" content="Contactenos para una evaluacion personalizada de sus necesidades fiscales y empresariales.">
+  <meta property="og:image" content="MCglobalFinal.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a1628'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial,sans-serif' font-weight='900' font-size='16' fill='%235FB1FF'%3EMC%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader"><div class="preloader-spinner"></div></div>
 
   <!-- NAVBAR -->
   <nav class="navbar scrolled" id="navbar">
@@ -239,7 +244,15 @@
     </div>
   </footer>
 
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
   <script>
+    /* Preloader */
+    window.addEventListener('load', () => { document.getElementById('preloader').classList.add('hidden'); });
+
     /* Navbar */
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', true); }, { passive: true });
@@ -258,6 +271,11 @@
     const revealEls = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); obs.unobserve(e.target); } }); }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
     revealEls.forEach(el => obs.observe(el));
+
+    /* Back to Top */
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 400); }, { passive: true });
+    backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
     /* Contact Form → WhatsApp */
     document.getElementById('contactForm').addEventListener('submit', function(e) {

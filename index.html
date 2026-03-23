@@ -10,12 +10,17 @@
   <meta property="og:description" content="Incubadora de negocios y arquitectos de la rentabilidad.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_MX">
+  <meta property="og:image" content="MCglobalFinal.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a1628'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial,sans-serif' font-weight='900' font-size='16' fill='%235FB1FF'%3EMC%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader"><div class="preloader-spinner"></div></div>
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
@@ -107,6 +112,11 @@
     </div>
   </div>
 
+  <!-- WAVE: stats → services -->
+  <div class="wave-divider" style="background:var(--white);">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,0 C300,60 900,0 1200,60 L1200,0 L0,0 Z" fill="var(--navy)"/></svg>
+  </div>
+
   <!-- SERVICIOS PREVIEW -->
   <section id="servicios">
     <div class="container">
@@ -117,49 +127,49 @@
       </div>
       <div class="services-grid">
         <div class="service-card reveal">
-          <div class="service-icon">&#127959;</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/></svg></div>
           <h3>Incubacion de Negocios</h3>
           <p>Sistematizamos la creacion de empresas para que operen bajo el marco legal mas eficiente posible.</p>
           <a href="servicios.html" class="card-link">Conocer mas &rarr;</a>
         </div>
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon">&#9878;</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
           <h3>Ingenieria Fiscal</h3>
           <p>Estructura tributaria agresiva y estrategica que transforma obligaciones en ventajas competitivas.</p>
           <a href="servicios.html" class="card-link">Conocer mas &rarr;</a>
         </div>
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon">&#128176;</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
           <h3>Optimizacion Tributaria</h3>
           <p>Maximizamos la optimizacion fiscal para garantizar liquidez inmediata y flujo de efectivo.</p>
           <a href="servicios.html" class="card-link">Conocer mas &rarr;</a>
         </div>
         <div class="service-card reveal reveal-delay-3">
-          <div class="service-icon">&#128200;</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
           <h3>Recapitalizacion</h3>
           <p>Convertimos las cargas impositivas en oportunidades de recapitalizacion para tu negocio.</p>
           <a href="servicios.html" class="card-link">Conocer mas &rarr;</a>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">&#128737;</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h3>Blindaje Financiero</h3>
           <p>Proteccion patrimonial integral para asegurar que cada peso generado se quede en tu negocio.</p>
           <a href="servicios.html" class="card-link">Conocer mas &rarr;</a>
         </div>
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon">&#128221;</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
           <h3>Estructura Legal</h3>
           <p>Diseno de estructuras corporativas bajo el marco legal mas eficiente para evitar fugas de capital.</p>
           <a href="servicios.html" class="card-link">Conocer mas &rarr;</a>
         </div>
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon">&#128188;</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
           <h3>Consultoria Financiera</h3>
           <p>Asesoria de alto nivel para optimizar la gestion financiera y estrategia de crecimiento.</p>
           <a href="servicios.html" class="card-link">Conocer mas &rarr;</a>
         </div>
         <div class="service-card reveal reveal-delay-3">
-          <div class="service-icon">&#128640;</div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
           <h3>Desarrollo Empresarial</h3>
           <p>Acompanamiento estrategico para escalar tu negocio con bases solidas y rentables.</p>
           <a href="servicios.html" class="card-link">Conocer mas &rarr;</a>
@@ -167,6 +177,11 @@
       </div>
     </div>
   </section>
+
+  <!-- WAVE: services → about -->
+  <div class="wave-divider" style="background:var(--gray-50);">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,60 C300,0 900,60 1200,0 L1200,60 L0,60 Z" fill="var(--white)"/></svg>
+  </div>
 
   <!-- ABOUT PREVIEW -->
   <section style="background:var(--gray-50)">
@@ -178,23 +193,144 @@
       </div>
       <div class="about-grid">
         <div class="about-card reveal">
-          <span class="about-card-icon">&#128274;</span>
+          <span class="about-card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></span>
           <h3>Ingenieria Fiscal Estrategica</h3>
           <p>En MC Global Mexico aplicamos una ingenieria fiscal agresiva y estrategica que transforma tus obligaciones tributarias en oportunidades reales de recapitalizacion y ventaja competitiva.</p>
         </div>
         <div class="about-card reveal reveal-delay-1">
-          <span class="about-card-icon">&#9889;</span>
+          <span class="about-card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
           <h3>Incubacion Integral</h3>
           <p>Nuestra mision es incubar proyectos y blindarlos financieramente. Sistematizamos la creacion de empresas para que operen bajo el marco legal mas eficiente posible desde el primer dia.</p>
         </div>
         <div class="about-card reveal reveal-delay-2">
-          <span class="about-card-icon">&#128200;</span>
+          <span class="about-card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
           <h3>Maxima Rentabilidad</h3>
           <p>Aseguramos que cada peso generado se quede en tu negocio para financiar su crecimiento, garantizando liquidez inmediata y una ventaja competitiva real y sostenible.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- WAVE: about → testimonials -->
+  <div class="wave-divider" style="background:var(--white);">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,0 C300,60 900,0 1200,60 L1200,0 L0,0 Z" fill="var(--gray-50)"/></svg>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Testimonios</span>
+        <h2>Lo que dicen nuestros clientes</h2>
+        <p>Empresarios que confiaron en MC Global Mexico para blindar sus negocios financieramente.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">Gracias a MC Global logramos una optimizacion fiscal del 40%. La estructura que disenaron para nuestra empresa nos permitio reinvertir capital que antes se iba en impuestos mal gestionados.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">RA</div>
+            <div>
+              <div class="testimonial-author-name">Roberto Alvarez</div>
+              <div class="testimonial-author-role">Director General, Comercializadora Azteca S.A.</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">MC Global incubo mi negocio desde cero. En 3 meses tenia toda la estructura legal y fiscal lista. Lo que mas valoro es que cada peso que genero se queda en mi empresa, no en impuestos innecesarios.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MG</div>
+            <div>
+              <div class="testimonial-author-name">Maria Garcia</div>
+              <div class="testimonial-author-role">Fundadora, Distribuidora Central S. de R.L.</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">El blindaje financiero que nos hicieron fue un antes y un despues. Ahora tenemos proteccion patrimonial solida y una estrategia fiscal que nos ahorra millones al ano. Totalmente recomendados.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JL</div>
+            <div>
+              <div class="testimonial-author-name">Jorge Lopez</div>
+              <div class="testimonial-author-role">CEO, Grupo Industrial Norte S.A.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background:var(--gray-50)">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Preguntas Frecuentes</span>
+        <h2>Resolvemos tus dudas</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+            <span>¿Que es la ingenieria fiscal y es legal?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Si, es completamente legal. La ingenieria fiscal consiste en disenar estrategias tributarias optimizadas dentro del marco legal vigente para reducir la carga impositiva de tu empresa. No se trata de evasion, sino de aprovechar los beneficios, deducciones y esquemas que la ley permite.</div></div>
+        </div>
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+            <span>¿Cuanto tiempo toma incubar un negocio?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Dependiendo de la complejidad, el proceso de incubacion puede tomar entre 4 y 12 semanas. Esto incluye el diagnostico inicial, diseno de la estructura legal y fiscal, constitucion de la empresa y la implementacion de todas las estrategias de optimizacion.</div></div>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+            <span>¿Que tipo de empresas pueden beneficiarse?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Nuestros servicios son para cualquier empresa o persona fisica con actividad empresarial. Desde emprendedores que inician su primer negocio hasta corporativos con multiples razones sociales. Cada estrategia se personaliza segun el tamano, sector y necesidades especificas.</div></div>
+        </div>
+        <div class="faq-item reveal reveal-delay-3">
+          <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+            <span>¿Que incluye el blindaje financiero?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">El blindaje financiero incluye proteccion patrimonial, estructuracion de activos, planeacion sucesoria empresarial y estrategias para minimizar riesgos fiscales y legales. El objetivo es que tu patrimonio este protegido ante cualquier contingencia.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+            <span>¿Cuanto cuesta una consultoria inicial?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">La evaluacion inicial es sin costo. Analizamos tu situacion fiscal actual y te presentamos un plan con las oportunidades de optimizacion que encontramos. Solo si decides avanzar se genera una cotizacion personalizada basada en los servicios que necesites.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE: FAQ → CTA -->
+  <div class="wave-divider" style="background:linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,60 C300,0 900,60 1200,0 L1200,60 L0,60 Z" fill="var(--gray-50)"/></svg>
+  </div>
 
   <!-- CTA -->
   <section class="cta-section">
@@ -291,14 +427,25 @@
       box-shadow: 0 6px 24px rgba(37,211,102,.6);
     }
     .about-card-icon {
-      font-size: 2rem;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 1rem;
     }
   </style>
 
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
   <!-- SCRIPTS -->
   <script>
+    /* Preloader */
+    window.addEventListener('load', () => {
+      document.getElementById('preloader').classList.add('hidden');
+    });
+
     /* Navbar scroll */
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -333,6 +480,44 @@
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
     revealElements.forEach(el => revealObserver.observe(el));
+
+    /* Back to Top */
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* Animated Counters */
+    function animateCounter(el) {
+      const text = el.textContent.trim();
+      const match = text.match(/^([\d,]+)(\+|%)?$/);
+      if (!match) return;
+      const target = parseInt(match[1].replace(/,/g, ''), 10);
+      const suffix = match[2] || '';
+      const duration = 2000;
+      const start = performance.now();
+      el.textContent = '0' + suffix;
+      function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(eased * target);
+        el.textContent = current.toLocaleString() + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.stat-item h3').forEach(animateCounter);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.stats-grid').forEach(grid => counterObserver.observe(grid));
 
     /* Scroll-driven video scrub */
     (function initScrollVideo() {
